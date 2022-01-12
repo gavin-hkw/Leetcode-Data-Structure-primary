@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        int i=0, q;
+        bool ch[26]={false};  //初始化数组所有值为false。若某字母判断过不是唯一，则ch[该小写字母]=true。
+        while (i<s.size()) {
+            if(ch[s[i]-'a']) {  //目前遍历到的小写字母已判断过，故跳过本次循环
+                i++;
+                continue;
+            }
+            q=s.find(s[i], i+1); 
+            if(q!=string::npos) { //某小写字母在它之后的字符子串中也出现过
+                ch[s[i]-'a']=true;
+                i++;
+            }
+            else return i;
+        }
+        return -1;
+    }
+};
