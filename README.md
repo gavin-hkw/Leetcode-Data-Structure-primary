@@ -1,2 +1,2 @@
 # Leetcode-Data-Structure-primary
-included 14 days study routine using C++ code 
+included 14 days study routine coding with C++.
